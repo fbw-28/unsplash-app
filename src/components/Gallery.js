@@ -1,9 +1,19 @@
+import { connect } from 'react-redux';
+
 const Gallery = (props) => {
+  console.log('GALLERY PROPS:', props);
+
   return (
     <div className="gal">
-      <img src={props.image} />
+      <p>{props.text}</p>
+      <img src={props.image} alt="whatevs" />
     </div>
   );
 };
 
-export default Gallery;
+const mapStateToProps = (state) => {
+  console.log('GALLERY.JS -> STATE IS COMING', state);
+  return state;
+};
+
+export default connect(mapStateToProps)(Gallery);
